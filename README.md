@@ -1,1 +1,1 @@
-This README was made automatically by makestuff and should be changed.
+Disease data that we are playing with and possibly curating.

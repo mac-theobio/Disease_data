@@ -2,10 +2,9 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: notarget
+target pngtarget pdftarget vtarget acrtarget: ewmeas.Rout 
 
 ##################################################################
-
 
 # make files
 
@@ -14,7 +13,16 @@ include stuff.mk
 
 ##################################################################
 
-## Content
+###############
+
+# England and Wales measles time series from Ben Bolker's data site.
+# http://ms.mcmaster.ca/~bolker/measdata.html
+
+ewmeas.ssv: 
+	wget -O $@ "http://ms.mcmaster.ca/~bolker/measdata/ewmeas.dat"
+ 
+ewmeas.Rout: ewmeas.ssv ewmeas.R
+	$(run-R)
 
 ######################################################################
 
@@ -26,5 +34,5 @@ include stuff.mk
 -include $(ms)/git.mk
 -include $(ms)/visual.mk
 
-# -include $(ms)/wrapR.mk
+-include $(ms)/wrapR.mk
 # -include $(ms)/oldlatex.mk
