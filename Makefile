@@ -13,6 +13,8 @@ include stuff.mk
 
 ##################################################################
 
+Sources += $(wildcard *.R)
+
 ###############
 
 # England and Wales measles time series from Ben Bolker's data site.
