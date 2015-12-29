@@ -4,6 +4,7 @@
 	-cd $(dir $(ms)) && rm -rf .$(notdir $(ms))
 	touch $@
 
+export ms = $(gitroot)/makestuff
 msrepo = https://github.com/dushoff
 gitroot = ../
 
