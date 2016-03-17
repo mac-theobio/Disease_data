@@ -1,0 +1,5 @@
+A weird, crypto site, but with lots of "data" (really, Spectrum estimates)
+
+http://aidsinfo.unaids.org?did%3D554c9b9c05b5b281750af202%26r%3Dworld%26t%3D2000%26tb%3Dd%26bt%3Ddnli%26tr%3Dworld
+
+Weirdly formatted csv files downloaded successfully.

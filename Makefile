@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: ewmeas.Rout 
+target pngtarget pdftarget vtarget acrtarget: PLWH_all.world.yearly.Rout 
 
 ##################################################################
 
@@ -11,9 +11,11 @@ target pngtarget pdftarget vtarget acrtarget: ewmeas.Rout
 Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
 include stuff.mk
 
+include $(ms)/perl.def
+
 ##################################################################
 
-Sources += $(wildcard *.R)
+Sources += $(wildcard *.R *.mkd *.pl)
 
 ###############
 
@@ -24,6 +26,22 @@ ewmeas.ssv:
 	wget -O $@ "http://ms.mcmaster.ca/~bolker/measdata/ewmeas.dat"
  
 ewmeas.Rout: ewmeas.ssv ewmeas.R
+	$(run-R)
+
+##################
+
+Sources += HIV_incidence_all.csv PLWH_all.csv
+
+UNAIDS.mkd:
+
+# For now, just try to pull the worldwide data from these scary files
+
+PLWH_all.world.tab: PLWH_all.csv worldUN.pl
+%.world.tab: %.csv worldUN.pl
+	$(PUSH)
+
+PLWH_all.world.yearly.Rout: PLWH_all.world.tab PLWH_all.world.vars.Rout yearly.R
+%.yearly.Rout: %.vars.Rout %.tab yearly.R
 	$(run-R)
 
 ######################################################################
