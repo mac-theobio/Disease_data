@@ -30,6 +30,8 @@ ewmeas.Rout: ewmeas.ssv ewmeas.R
 
 ##################
 
+### SPECTRUM "data" from UNAIDS site
+
 Sources += HIV_incidence_all.csv PLWH_all.csv
 
 UNAIDS.mkd:
