@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: PLWH_all.world.yearly.Rout 
+target pngtarget pdftarget vtarget acrtarget: HIV_incidence_all.world.yearly.Rout.pdf 
 
 ##################################################################
 
@@ -42,7 +42,8 @@ PLWH_all.world.tab: PLWH_all.csv worldUN.pl
 %.world.tab: %.csv worldUN.pl
 	$(PUSH)
 
-PLWH_all.world.yearly.Rout: PLWH_all.world.tab PLWH_all.world.vars.Rout yearly.R
+# Hook
+HIV_incidence_all.world.yearly.Rout.pdf: HIV_incidence_all.world.tab HIV_incidence_all.world.vars.Rout yearly.R
 %.yearly.Rout: %.vars.Rout %.tab yearly.R
 	$(run-R)
 
