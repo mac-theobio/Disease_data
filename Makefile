@@ -51,7 +51,7 @@ HIV_incidence_all.world.yearly.Rout.pdf: HIV_incidence_all.world.tab HIV_inciden
 
 Sources += cards_2016.csv
 
-cards.Rout: cards_2016.csv cards.R
+cards.Rout: cards_2016.csv cardsim.Rout cards.R
 	$(run-R)
 
 ######################################################################
