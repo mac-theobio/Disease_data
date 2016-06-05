@@ -1,6 +1,7 @@
 library(ggplot2)
 library(dplyr)
-theme_set(theme_bw())
+theme_set(theme_bw(base_size=20))
+par(ps=20)
 
 N <- 26
 
@@ -24,13 +25,8 @@ shoot <- (
 	+ theme(legend.position="none")
 )
 print(shoot)
-print(shoot
-	+ geom_line(data=sim2, size=1.6)
-)
-print(shoot
-	+ geom_line(data=sim2, size=1.6)
-	+ geom_line(data=sim2x, size=1.6)
-)
+print(shoot2 <- shoot + geom_line(data=sim2, size=1.6))
+print(shoot2 + geom_line(data=sim2x, size=1.6))
 
 library(plyr)
 stepFrame <- function(f){
@@ -48,8 +44,9 @@ step <- (
 	ggplot(stepdat2, aes(x=contact_potential, y=Inext, color=trial))
 	+ geom_point()
 	+ theme(legend.position="none")
+	+ xlab("Infection potential (SI/N)")
 )
 
-print(geom_abline())
-print(step+geom_abline(slope=2))
-print(step+geom_abline(slope=2)+geom_abline(slope=2.2))
+print(step)
+print(step2 <- step+geom_abline(slope=2))
+print(step2+geom_abline(slope=2.2))
