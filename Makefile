@@ -58,6 +58,8 @@ cards.Rout: cards_2016.csv cardsim.Rout cards.R
 Sources += us2000.txt
 us2000.Rout: us2000.txt us2000.R
 
+####### Ebola data (moving from Dropbox/academicWW/Ebola_math/WHO/liberia150429.npc.RR
+
 ######################################################################
 
 ### Makestuff
