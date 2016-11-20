@@ -1,7 +1,7 @@
 # Disease_data
 ### Hooks for the editor to set the default target
 current: target
-target pngtarget pdftarget vtarget acrtarget: ewmeas.Rout 
+target pngtarget pdftarget vtarget acrtarget: us2000.Rout 
 
 ##################################################################
 
@@ -52,6 +52,11 @@ Sources += cards_2016.csv
 
 cards.Rout: cards_2016.csv cardsim.Rout cards.R
 	$(run-R)
+
+####### US mortality plot 
+
+Sources += us2000.txt
+us2000.Rout: us2000.txt us2000.R
 
 ######################################################################
 
