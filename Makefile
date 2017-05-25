@@ -1,7 +1,10 @@
 # Disease_data
+
 ### Hooks for the editor to set the default target
 current: target
-target pngtarget pdftarget vtarget acrtarget: us2000.Rout 
+target = Makefile
+-include target.mk
+target: $(target)
 
 ##################################################################
 
@@ -29,6 +32,13 @@ ewmeas.Rout: ewmeas.ssv ewmeas.R
 
 ##################
 
+### JD TB income stuff from George Cauthen's floppy disk
+### This is for three specific years in the 1980s
+
+tbincome.Rout: tbincome.tsv tbincome.R
+
+##################
+
 ### SPECTRUM "data" from UNAIDS site
 
 Sources += HIV_incidence_all.csv PLWH_all.csv
@@ -41,7 +51,6 @@ PLWH_all.world.tab: PLWH_all.csv worldUN.pl
 %.world.tab: %.csv worldUN.pl
 	$(PUSH)
 
-# Hook
 HIV_incidence_all.world.yearly.Rout.pdf: HIV_incidence_all.world.tab HIV_incidence_all.world.vars.Rout yearly.R
 %.yearly.Rout: %.vars.Rout %.tab yearly.R
 	$(run-R)
