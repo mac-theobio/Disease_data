@@ -2,6 +2,8 @@ ewmeas.ssv
 commit.time
 .*.sw*
 
+*.world.tab
+
 *.pdf
 
 *.log
@@ -19,6 +21,7 @@ commit.time
 *.wrapR.*
 
 local.mk
+target.mk
 
 testdir/
 .testdir/

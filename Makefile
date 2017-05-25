@@ -35,6 +35,8 @@ ewmeas.Rout: ewmeas.ssv ewmeas.R
 ### JD TB income stuff from George Cauthen's floppy disk
 ### This is for three specific years in the 1980s
 
+Sources += $(wildcard *.tsv)
+
 tbincome.Rout: tbincome.tsv tbincome.R
 
 ##################
