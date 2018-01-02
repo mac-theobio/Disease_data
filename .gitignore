@@ -1,6 +1,8 @@
-ewmeas.ssv
 commit.time
+up.time
 .*.sw*
+
+ewmeas.ssv
 
 *.world.tab
 
