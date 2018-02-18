@@ -24,6 +24,7 @@ Sources += $(wildcard *.R *.mkd *.pl)
 # England and Wales measles time series from Ben Bolker's data site.
 # http://ms.mcmaster.ca/~bolker/measdata.html
 
+Ignore += ewmeas.ssv
 ewmeas.ssv: 
 	wget -O $@ "http://ms.mcmaster.ca/~bolker/measdata/ewmeas.dat"
  
