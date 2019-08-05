@@ -50,6 +50,7 @@ UNAIDS.mkd:
 
 # For now, just try to pull the worldwide data from these scary files
 
+Ignore += *.tab
 PLWH_all.world.tab: PLWH_all.csv worldUN.pl
 %.world.tab: %.csv worldUN.pl
 	$(PUSH)
