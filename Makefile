@@ -11,8 +11,16 @@ target: $(target)
 # make files
 
 Sources = Makefile .ignore README.md sub.mk LICENSE.md
-include sub.mk
 
+ms = makestuff
+Sources += $(ms)
+Makefile: $(ms)/Makefile
+
+$(ms)/%.mk: $(ms)/Makefile ;
+$(ms)/Makefile:
+	git submodule update -i
+
+-include $(ms)/os.mk
 -include $(ms)/perl.def
 
 ##################################################################
