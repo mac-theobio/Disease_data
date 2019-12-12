@@ -85,6 +85,7 @@ makestuff/Makefile:
 	ls $@
 
 -include makestuff/os.mk
+-include makestuff/wrapR.mk
 -include makestuff/git.mk
 -include makestuff/visual.mk
 -include makestuff/projdir.mk
