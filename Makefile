@@ -73,6 +73,16 @@ us2000.Rout: us2000.txt us2000.R
 
 ######################################################################
 
+## Africa data from synchrony paper; this has a theobio wiki that should be updated
+
+rsread.Rout: rsinc.csv rscoords.csv rsread.R
+rsincplot.Rout: rsread.Rout rsincplot.R
+
+
+######################################################################
+
+
+
 ### Makestuff
 
 Sources += Makefile
