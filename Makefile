@@ -17,8 +17,6 @@ vim_session:
 
 Sources += $(wildcard *.R *.mkd *.pl)
 
-###############
-
 # England and Wales measles time series from Ben Bolker's data site.
 # http://ms.mcmaster.ca/~bolker/measdata.html
 
@@ -95,7 +93,9 @@ makestuff/Makefile:
 	ls $@
 
 -include makestuff/os.mk
+
 -include makestuff/wrapR.mk
+
 -include makestuff/git.mk
 -include makestuff/visual.mk
 -include makestuff/projdir.mk
