@@ -78,6 +78,8 @@ rsincplot.Rout: rsread.Rout rsincplot.R
 
 ## coronavirus, Mike Li spreadsheet
 
+Sources += $(wildcard corona.csv)
+
 coronaPlot.Rout: corona.csv coronaPlot.R
 
 ######################################################################
