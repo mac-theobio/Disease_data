@@ -67,8 +67,6 @@ cards.Rout: cards_2016.csv cardsim.Rout cards.R
 Sources += us2000.txt
 us2000.Rout: us2000.txt us2000.R
 
-####### Ebola data (moving from Dropbox/academicWW/Ebola_math/WHO/liberia150429.npc.RR
-
 ######################################################################
 
 ## Africa data from synchrony paper; this has a theobio wiki that should be updated
@@ -76,6 +74,11 @@ us2000.Rout: us2000.txt us2000.R
 rsread.Rout: rsinc.csv rscoords.csv rsread.R
 rsincplot.Rout: rsread.Rout rsincplot.R
 
+######################################################################
+
+## coronavirus, Mike Li spreadsheet
+
+coronaPlot.Rout: corona.csv coronaPlot.R
 
 ######################################################################
 
