@@ -20,3 +20,19 @@ tplot <- (ggplot(ddcorona, aes(x=date, y=cases, color=Province, lty=City))
 
 print(tplot)
 print(tplot+scale_y_log10())
+
+pplot <- (tplot 
+	%+% filter(ddcorona, date<= as.Date("20-01-27",format="%y-%m-%d"))
+)
+print(pplot)
+print(pplot+scale_y_log10())
+
+cplot <- (ggplot(ddcorona, aes(x=date, y=cum_cases, color=Province, lty=City))
+	+ geom_line()
+	+ geom_point()
+	+ ylab("Cumulative cases")
+)
+
+print(cplot)
+print(cplot+scale_y_log10())
+
