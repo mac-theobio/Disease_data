@@ -84,8 +84,6 @@ coronaPlot.Rout: corona.csv coronaPlot.R
 
 ######################################################################
 
-
-
 ### Makestuff
 
 Sources += Makefile
