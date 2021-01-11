@@ -86,13 +86,18 @@ Ignore += coronaCA.csv
 coronaCA.csv:
 	wget -O $@ "https://raw.githubusercontent.com/wzmli/COVID19-Canada/master/git_push/clean.Rout.csv"
 
-## coronaON.R coronaCA.csv
-coronaCA.Rout: coronaON.R coronaCA.csv
+coronaCA.Rout: coronaCA.R coronaCA.csv
 	$(pipeR)
 
-coronaON.ON.pdf: coronaON.Rout ;
+## coronaCA.ON.pdf: coronaCA.R
+## coronaCA.Rout-2.pdf: coronaCA.R
+
+## pipeRdesc += coronaCA
 
 ######################################################################
+
+trango.df:
+	$(lscheck)
 
 ### Makestuff
 
