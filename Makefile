@@ -82,6 +82,16 @@ Sources += $(wildcard corona.csv)
 
 coronaPlot.Rout: corona.csv coronaPlot.R
 
+Ignore += coronaCA.csv
+coronaCA.csv:
+	wget -O $@ "https://raw.githubusercontent.com/wzmli/COVID19-Canada/master/git_push/clean.Rout.csv"
+
+## coronaON.R coronaCA.csv
+coronaCA.Rout: coronaON.R coronaCA.csv
+	$(pipeR)
+
+coronaON.ON.pdf: coronaON.Rout ;
+
 ######################################################################
 
 ### Makestuff
@@ -98,6 +108,7 @@ makestuff/Makefile:
 -include makestuff/os.mk
 
 -include makestuff/wrapR.mk
+-include makestuff/pipeR.mk
 
 -include makestuff/git.mk
 -include makestuff/visual.mk
