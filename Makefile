@@ -83,16 +83,17 @@ Sources += $(wildcard corona.csv)
 coronaPlot.Rout: corona.csv coronaPlot.R
 
 Ignore += coronaCA.csv
+## del coronaCA.csv ## to reload ##
 coronaCA.csv:
 	wget -O $@ "https://raw.githubusercontent.com/wzmli/COVID19-Canada/master/git_push/clean.Rout.csv"
 
 coronaCA.Rout: coronaCA.R coronaCA.csv
 	$(pipeR)
 
-## coronaCA.ON.pdf: coronaCA.R
+## coronaCA.ON.Rout.pdf: coronaCA.R
 ## coronaCA.Rout-2.pdf: coronaCA.R
 
-## pipeRdesc += coronaCA
+pipeRoutdesc += coronaCA
 
 ######################################################################
 

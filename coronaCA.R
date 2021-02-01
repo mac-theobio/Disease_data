@@ -18,7 +18,7 @@ allp <- (ggplot(dat)
 print(allp)
 print(allp + scale_y_log10(limits=c(10, NA)))
 
-## startGraphics(desc="ON")
+startGraphics(desc="ON.Rout")
 
 onp <- (ggplot(ON)
 	+ ggtitle("ON coronavirus")
@@ -29,5 +29,4 @@ onp <- (ggplot(ON)
 
 print(onp)
 print(onp + scale_y_log10(limits=c(10, NA)))
-
 
