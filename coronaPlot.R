@@ -1,7 +1,8 @@
 library(tidyverse)
 library(ggplot2); theme_set(theme_bw(base_size=20))
+library(shellpipes)
 
-ddcorona <- read_csv(input_files[[1]])
+ddcorona <- csvRead()
 
 ddcorona <- (ddcorona
 	%>% mutate(date=as.Date(date,format="%m-%d-%y")

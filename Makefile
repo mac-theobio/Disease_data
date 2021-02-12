@@ -80,7 +80,9 @@ rsincplot.Rout: rsread.Rout rsincplot.R
 
 Sources += $(wildcard corona.csv)
 
-coronaPlot.Rout: corona.csv coronaPlot.R
+## coronaPlot.Rout-0.pdf: coronaPlot.R
+coronaPlot.Rout: coronaPlot.R corona.csv
+	$(pipeR)
 
 Ignore += coronaCA.csv
 ## del coronaCA.csv ## to reload ##
@@ -97,9 +99,6 @@ pipeRoutdesc += coronaCA
 
 ######################################################################
 
-trango.df:
-	$(lscheck)
-
 ### Makestuff
 
 Sources += Makefile
@@ -113,8 +112,8 @@ makestuff/Makefile:
 
 -include makestuff/os.mk
 
--include makestuff/wrapR.mk
 -include makestuff/pipeR.mk
+-include makestuff/pdfpages.mk
 
 -include makestuff/git.mk
 -include makestuff/visual.mk
