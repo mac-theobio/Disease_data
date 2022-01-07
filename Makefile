@@ -13,6 +13,8 @@ current: target
 vim_session:
 	bash -cl "vmt"
 
+## coronaCA.Rout.pdf:
+
 ######################################################################
 
 Sources += $(wildcard *.R *.mkd *.pl)
