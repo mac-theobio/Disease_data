@@ -13,7 +13,7 @@ current: target
 vim_session:
 	bash -cl "vmt"
 
-## coronaCA.Rout.pdf:
+## coronaCA.Rout: coronaCA.R
 
 ######################################################################
 
