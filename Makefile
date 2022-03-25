@@ -1,5 +1,4 @@
-## This is Disease_data, a screens project directory
-## makestuff/project.Makefile
+## This is Disease_data
 
 current: target
 -include target.mk
@@ -22,12 +21,13 @@ Sources += $(wildcard *.R *.mkd *.pl)
 # England and Wales measles time series from Ben Bolker's data site.
 # http://ms.mcmaster.ca/~bolker/measdata.html
 
+## See also outputs/ewmeas.ssv
 Ignore += ewmeas.ssv
 ewmeas.ssv: 
 	wget -O $@ "http://ms.mcmaster.ca/~bolker/measdata/ewmeas.dat"
  
 ewmeas.Rout: ewmeas.ssv ewmeas.R
-	$(run-R)
+	$(wrapR)
 
 ##################
 
