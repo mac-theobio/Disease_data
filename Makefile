@@ -101,6 +101,22 @@ pipeRoutdesc += coronaCA
 
 ######################################################################
 
+## Flatten the curve
+## Oops! This directory was supposed to be for data curation; fix after class is done 2022 Apr 03 (Sun)
+
+## bolker.R: bolker.rmd
+
+flatFuns.Rout: flatFuns.R
+	$(wrapR)
+flatSims.Rout: flatSims.R flatFuns.rda
+	$(pipeR)
+flatSimPlots.Rout: flatSimPlots.R flatSims.rda
+	$(pipeR)
+flatResponse.Rout: flatResponse.R flatFuns.rda
+	$(pipeR)
+flatResponsePlots.Rout: flatResponsePlots.R flatResponse.rds
+	$(pipeR)
+
 ### Makestuff
 
 Sources += Makefile
@@ -116,6 +132,7 @@ makestuff/Makefile:
 
 -include makestuff/pipeR.mk
 -include makestuff/pdfpages.mk
+## -include makestuff/rmd.mk
 
 -include makestuff/git.mk
 -include makestuff/visual.mk
