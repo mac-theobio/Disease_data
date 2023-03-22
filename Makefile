@@ -37,6 +37,7 @@ ewmeas.Rout: ewmeas.ssv ewmeas.R
 Sources += $(wildcard *.tsv)
 
 tbincome.Rout: tbincome.tsv tbincome.R
+	$(wrapR)
 
 ##################
 
