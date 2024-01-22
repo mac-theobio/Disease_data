@@ -96,6 +96,7 @@ coronaCA.csv:
 coronaCA.Rout: coronaCA.R coronaCA.csv
 	$(pipeR)
 
+Ignore += coronaCA.*.pdf
 coronaCA.ON.pdf: coronaCA.Rout ;
 ## coronaCA.Rout-2.pdf: coronaCA.R
 
