@@ -13,6 +13,7 @@ vim_session:
 	bash -cl "vmt"
 
 ## coronaCA.Rout: coronaCA.R
+## coronaCA.ON.Rout: coronaCA.R
 
 ######################################################################
 
@@ -95,7 +96,7 @@ coronaCA.csv:
 coronaCA.Rout: coronaCA.R coronaCA.csv
 	$(pipeR)
 
-## coronaCA.ON.Rout.pdf: coronaCA.R
+coronaCA.ON.pdf: coronaCA.Rout ;
 ## coronaCA.Rout-2.pdf: coronaCA.R
 
 pipeRoutdesc += coronaCA
