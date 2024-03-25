@@ -22,6 +22,7 @@ vim_session:
 covid_post.Rout: covid_post.R covid_post.csv
 	$(pipeR)
 
+Ignore += covid_post.csv
 covid_post.csv:
 	wget -O $@ "https://health-infobase.canada.ca/src/data/covidLive/covid19-download.csv"
 
