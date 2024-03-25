@@ -17,6 +17,16 @@ vim_session:
 
 ######################################################################
 
+## Current Canadian data 2024 Mar 25 (Mon)
+
+covid_post.Rout: covid_post.R covid_post.csv
+	$(pipeR)
+
+covid_post.csv:
+	wget -O $@ "https://health-infobase.canada.ca/src/data/covidLive/covid19-download.csv"
+
+######################################################################
+
 Sources += $(wildcard *.R *.mkd *.pl)
 
 # England and Wales measles time series from Ben Bolker's data site.
