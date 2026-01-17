@@ -13,7 +13,7 @@ vim_session:
 	bash -cl "vmt"
 
 ## coronaCA.Rout: coronaCA.R
-## coronaCA.ON.Rout: coronaCA.R
+## coronaCA.ON.pdf: coronaCA.R
 
 ######################################################################
 
