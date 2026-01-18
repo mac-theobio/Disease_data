@@ -104,9 +104,9 @@ Ignore += coronaCA.csv
 coronaCA.csv:
 	wget -O $@ "https://raw.githubusercontent.com/wzmli/COVID19-Canada/master/git_push/clean.Rout.csv"
 
+## coronaCA.ON.pdf: coronaCA.R coronaCA.csv
 coronaCA.Rout: coronaCA.R coronaCA.csv
 	$(pipeR)
-
 Ignore += coronaCA.*.pdf
 coronaCA.ON.pdf: coronaCA.Rout ;
 ## coronaCA.Rout-2.pdf: coronaCA.R
