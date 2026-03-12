@@ -4,12 +4,15 @@ library(ggplot2); theme_set(theme_bw())
 
 library(shellpipes)
 
-dat <- csvRead()
+dat <- csvRead(na=c("-", ""))
 
 names(dat)
+summary(dat)
 
 on <- dat |> filter(prname=="Ontario")
 onlate <- on |> filter(date > as.Date("2023-01-01"))
+
+summary(on)
 
 tplot <- (ggplot(on)
 	+ aes(date, avgcases_last7)
@@ -20,5 +23,5 @@ tplot <- (ggplot(on)
 )
 
 print(tplot)
-print(tplot %+% onlate)
+print(tplot + onlate)
 
