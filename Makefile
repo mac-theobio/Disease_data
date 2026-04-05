@@ -10,7 +10,7 @@ current: target
 # Content
 
 vim_session:
-	bash -cl "vmt"
+	bash -ic "vmt"
 
 ## coronaCA.Rout: coronaCA.R
 ## coronaCA.ON.Rout: coronaCA.R
