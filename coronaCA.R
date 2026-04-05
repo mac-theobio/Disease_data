@@ -2,13 +2,15 @@ library(ggplot2); theme_set(theme_bw())
 library(dplyr)
 library(shellpipes)
 
+endDate <- as.Date("2022-04-01")
+
 startGraphics()
 
 dat <- csvRead()
 
 summary(dat)
 
-ON <- filter(dat, Province=="ON")
+ON <- filter(dat, Province=="ON", Date < endDate)
 
 allp <- (ggplot(dat)
 	+ aes(Date, newConfirmations, color=Province)

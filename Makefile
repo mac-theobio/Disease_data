@@ -13,18 +13,20 @@ vim_session:
 	bash -ic "vmt"
 
 ## coronaCA.Rout: coronaCA.R
-## coronaCA.ON.Rout: coronaCA.R
+## coronaCA.ON.pdf: coronaCA.R
 
 ######################################################################
 
-## Current Canadian data 2024 Mar 25 (Mon)
+## Current Canadian data 
+## Not updated since 2024 apparently
 
 covid_post.Rout: covid_post.R covid_post.csv
 	$(pipeR)
 
-Ignore += covid_post.csv
-covid_post.csv:
+Sources += covid_post.csv
+covid_post.csv: 
 	wget -O $@ "https://health-infobase.canada.ca/src/data/covidLive/covid19-download.csv"
+	https://health-infobase.canada.ca/
 
 ######################################################################
 
@@ -104,9 +106,9 @@ Ignore += coronaCA.csv
 coronaCA.csv:
 	wget -O $@ "https://raw.githubusercontent.com/wzmli/COVID19-Canada/master/git_push/clean.Rout.csv"
 
+## coronaCA.ON.pdf: coronaCA.R coronaCA.csv
 coronaCA.Rout: coronaCA.R coronaCA.csv
 	$(pipeR)
-
 Ignore += coronaCA.*.pdf
 coronaCA.ON.pdf: coronaCA.Rout ;
 ## coronaCA.Rout-2.pdf: coronaCA.R
